@@ -1,13 +1,11 @@
 const POST_COUNT = 25;
 
-const PHOTO_DESCRIOPTIONS = [
-  'Пляж',
-  'Указатель',
-  'Девушка',
-  'Автомобиль',
-  'Блюдо',
-  'Кот',
-  'Пейзаж'
+const POST_DESCRIPTIONS = [
+  'Если чётко сформулировать желание для Вселенной, то всё обязательно сбудется. Верьте в себя. Главное хотеть и мечтать..... / I\'ve bought some potatoes.',
+  'Как же круто тут кормят #food #foodgram #instafood #delicious #yummy',
+  '#fun #party #cool #young',
+  'Норм',
+  'Вот это тачка! #wow #car #carwow #drive'
 ];
 
 const POST_MESSAGES = [
@@ -32,7 +30,7 @@ const AUTHOR_NAMES = [
 
 export {
   POST_COUNT,
-  PHOTO_DESCRIOPTIONS,
+  POST_DESCRIPTIONS,
   POST_MESSAGES,
   AUTHOR_NAMES,
 };

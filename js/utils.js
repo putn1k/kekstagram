@@ -9,9 +9,11 @@ const getRandomPositiveNumber = ( min, max ) => {
 };
 const createCountGenerator = ( startValue = 0 ) => () => ++startValue;
 const getRandomArrayElement = ( elements ) => elements[ getRandomPositiveNumber( 0, elements.length - 1 ) ];
+const isEscKey = ( evt ) => evt.key === 'Escape';
 
 export {
   getRandomPositiveNumber,
   createCountGenerator,
-  getRandomArrayElement
+  getRandomArrayElement,
+  isEscKey,
 };

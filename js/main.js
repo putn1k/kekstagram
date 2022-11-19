@@ -1,5 +1,9 @@
 import {
-  generatePosts,
+  POSTS,
 } from './generate-posts.js';
 
-generatePosts();
+import {
+  renderPosts,
+} from './render-posts.js';
+
+renderPosts( POSTS );
