@@ -1,4 +1,8 @@
 import {
+  POSTS,
+} from './generate-posts.js';
+
+import {
   showModalPost,
 } from './modal-post.js';
 
@@ -37,6 +41,4 @@ const renderPosts = ( posts ) => {
   postsContainerNode.appendChild( postsFragment );
 };
 
-export {
-  renderPosts,
-};
+renderPosts( POSTS );

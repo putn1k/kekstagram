@@ -2,25 +2,32 @@ import {
   commentsContainerNode,
 } from './modal-post.js';
 
-const commentTemplate = `
-  <li class="social__comment">
+
+const commentFragment = document.createDocumentFragment();
+
+const createTemplateComment = () => {
+  const li = document.createElement( 'li' );
+  li.classList.add( 'social__comment' );
+  li.innerHTML = `
     <img
-    class="social__picture"
-    src=""
-    alt=""
-    width="35" height="35">
-    <p class="social__text"></p>
-  </li>`;
+      class="social__picture"
+      src=""
+      alt=""
+      width="35" height="35">
+    <p class="social__text"></p>`;
+  return li;
+};
 
 const setupComment = ( {
   avatar,
   name,
   message
 } ) => {
-  commentsContainerNode.insertAdjacentHTML( 'afterbegin', commentTemplate );
-  commentsContainerNode.querySelector( '.social__picture' ).src = avatar;
-  commentsContainerNode.querySelector( '.social__picture' ).alt = name;
-  commentsContainerNode.querySelector( '.social__text' ).textContent = message;
+  const commentElement = createTemplateComment();
+  commentElement.querySelector( '.social__picture' ).src = avatar;
+  commentElement.querySelector( '.social__picture' ).alt = name;
+  commentElement.querySelector( '.social__text' ).textContent = message;
+  commentFragment.appendChild( commentElement );
 };
 
 const renderComments = ( comments, container ) => {
@@ -32,6 +39,7 @@ const renderComments = ( comments, container ) => {
     return;
   }
   comments.forEach( setupComment );
+  commentsContainerNode.appendChild( commentFragment );
 };
 
 export {
