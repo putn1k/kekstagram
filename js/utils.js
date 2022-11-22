@@ -7,13 +7,16 @@ const getRandomPositiveNumber = ( min, max ) => {
 
   return Math.floor( Math.random() * ( upper - lower + 1 ) + lower );
 };
+
 const createCountGenerator = ( startValue = 0 ) => () => ++startValue;
 const getRandomArrayElement = ( elements ) => elements[ getRandomPositiveNumber( 0, elements.length - 1 ) ];
 const isEscKey = ( evt ) => evt.key === 'Escape';
+const isElementOnFocus = ( element ) => document.activeElement === element;
 
 export {
   getRandomPositiveNumber,
   createCountGenerator,
   getRandomArrayElement,
   isEscKey,
+  isElementOnFocus,
 };
