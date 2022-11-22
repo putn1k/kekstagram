@@ -22,10 +22,10 @@ const setupPostModal = ( {
   renderComments( comments, postModalNode );
 };
 
-const onCloseModalPost = () => {
+const onCloseBtnClick = () => {
   postModalNode.classList.add( 'hidden' );
   document.body.classList.remove( 'modal-open' );
-  closePostModalNode.removeEventListener( 'click', onCloseModalPost );
+  closePostModalNode.removeEventListener( 'click', onCloseBtnClick );
   document.removeEventListener( 'keydown', onEscKeydown );
 };
 
@@ -33,13 +33,13 @@ const showModalPost = ( post ) => {
   postModalNode.classList.remove( 'hidden' );
   document.body.classList.add( 'modal-open' );
   setupPostModal( post );
-  closePostModalNode.addEventListener( 'click', onCloseModalPost );
+  closePostModalNode.addEventListener( 'click', onCloseBtnClick );
   document.addEventListener( 'keydown', onEscKeydown );
 };
 
 function onEscKeydown( evt ) {
   if ( isEscKey( evt ) ) {
-    onCloseModalPost();
+    onCloseBtnClick();
   }
 }
 
