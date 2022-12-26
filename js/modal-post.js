@@ -19,7 +19,7 @@ const setupPostModal = ( {
   postModalNode.querySelector( '.big-picture__img img' ).src = url;
   postModalNode.querySelector( '.social__caption' ).textContent = description;
   postModalNode.querySelector( '.likes-count' ).textContent = likes;
-  renderComments( comments, postModalNode );
+  renderComments( comments );
 };
 
 const onCloseBtnClick = () => {
