@@ -12,6 +12,11 @@ const createCountGenerator = ( startValue = 0 ) => () => ++startValue;
 const getRandomArrayElement = ( elements ) => elements[ getRandomPositiveNumber( 0, elements.length - 1 ) ];
 const isEscKey = ( evt ) => evt.key === 'Escape';
 const isElementOnFocus = ( element ) => document.activeElement === element;
+const declineWord = ( amount, wordsArr ) => {
+  const CASES = [ 2, 0, 1, 1, 1, 2 ];
+  const wordIndex = ( amount % 100 > 4 && amount % 100 < 20 ) ? 2 : CASES[ ( amount % 10 < 5 ) ? amount % 10 : 5 ];
+  return wordsArr[ wordIndex ];
+};
 
 export {
   getRandomPositiveNumber,
@@ -19,4 +24,5 @@ export {
   getRandomArrayElement,
   isEscKey,
   isElementOnFocus,
+  declineWord,
 };
